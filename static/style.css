@@ -1,0 +1,211 @@
+.prediksi-form{
+	font-family: 'Poppins', sans-serif;
+	background-image: url('img/bg-white.png'); /* Link gambar */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.navbar{
+	background-color: #B6FFA1;
+}
+
+.navbar span{
+	color: #1E44C6;
+	font-weight: 600;
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+.prediksi-form .content{
+	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+	background-color: white;
+}
+
+.prediksi-form .block-heading{
+    padding-top: 40px;
+    text-align: center;
+}
+
+.prediksi-form .block-heading h1,
+.prediksi-form .block-heading h2,
+.prediksi-form .block-heading h3 {
+	margin-bottom: 1rem;
+	color: #1E44C6;
+	font-weight: 600;
+}
+
+.prediksi-form .block-heading h5{
+	color: #000000;
+}
+
+
+.prediksi-form .title{
+	font-size: 1em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	font-weight: 600;
+}
+
+.prediksi-form .products{
+	background-color: none;
+    padding: 25px;
+}
+
+
+.prediksi-form button{
+	padding:12px 0;
+	font-weight: 600;
+	text-align: center;
+}
+
+.prediksi-form .date-separator{
+ 	margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.prediksi-form .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dua kolom */
+    gap: 15px; /* Jarak antar elemen */
+    justify-content: center; /* Pusatkan grid secara horizontal */
+    margin-top: 40px;
+}
+
+.prediksi-form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.center-wrapper {
+    grid-column: span 3; /* Membuat tombol mencakup dua kolom */
+    display: flex;
+    justify-content: center; /* Pusatkan tombol secara horizontal */
+}
+
+.prediksi-form .form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+
+
+.prediksi-form .form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.prediksi-form button {
+	padding: 10px 190px;
+    background-color: #B6FFA1;
+	color: #1E44C6;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+.prediksi-form button:hover {
+    background-color: #74e654;
+	text-decoration: none;
+	border: none;
+}
+
+/* Form Prediksi */
+
+
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/*Halaman hasil prediksi*/
+
+.prediksi{
+	display: block;       /* Default untuk elemen block seperti <div> atau <p> */
+    margin: 0 auto;       /* Mengatur margin kiri dan kanan menjadi auto */
+    width: 50%;           /* Tentukan lebar agar bisa ditengah */
+    text-align: center;
+}
+
+.hasil-prediksi{
+	padding: 10px auto;
+    background-color: #B6FFA1;
+	color: #1E44C6;
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	text-align: center;
+	font-weight: 600;
+}
+
+.solusi-box{
+	border-radius: 25px;
+	background: #B6FFA1;
+	padding: 20px; 
+	width: auto;
+	height: auto;
+	margin-top: 20px;
+}
+
+.solusi-box h2{
+	font-size: 16px;
+	color: #1E44C6;
+}
+
+.quote p{
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	font-size: 18px;
+}
+
+/* Responsive Design */
+
+@media (min-width: 768px) {
+	.form {
+		display: block;
+	}
+	.predict-button {
+        grid-column: span 1;
+	}
+	.prediksi-form .title {
+		font-size: 1.2em; 
+	}
+
+	.prediksi-form .products .item-name {
+		font-size: 1em; 
+	}
+
+	.prediksi-form .products .price {
+    	font-size: 1em; 
+	}
+
+  	.prediksi-form .card-details {
+    	padding: 10px 90px 30px; 
+    }
+
+  	.prediksi-form button {
+    	margin-top: 1em; 
+    } 
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Prediksi Obesitas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+</head>
+<body>
+    <main class="page prediksi-page">
+        <section class="prediksi-form dark">
+            <nav class="navbar justify-content-center">
+                <span class="navbar-text mb-0 h3">Obesity Prediction</span>
+              </nav>
+        <div class="container">
+            <div class="block-heading position-relative">
+                <h1>Hasil Prediksi Resiko Obesitas Anda</h1>
+            </div>
+            <div class="prediksi">
+                <div id="hasil-prediksi" class="hasil-prediksi">
+                    {{ prediction_text }}
+                </div>
+            </div>
+                    <!-- Solusi -->
+            <div class="solusi-box">
+                <h2><strong>Solusi :</strong></h2>
+                <ol id="solusi-list">
+                    <!-- Solusi akan diisi oleh JS -->
+                </ol>
+            </div>
+
+            <!-- Quote -->
+            <div class="quote">
+                <p>“Setiap penurunan berat, sekecil apa pun, adalah kemenangan. Rayakan setiap</p>
+                <p style="margin-top: -10px;">langkah tubuh sehat yang kamu impikan!"</p>
+
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript Langsung di Halaman HTML -->
+    <script>
+        // Data solusi untuk setiap kategori
+        const solusiData = {
+            "Berat Badan Kurang": [
+                "Konsumsi lebih banyak makanan bergizi dan tinggi kalori.",
+                "Makan lebih sering dalam porsi kecil sepanjang hari.",
+                "Tambahkan makanan kaya protein seperti daging, ikan, telur, dan susu.",
+                "Konsultasi dengan ahli gizi untuk perencanaan pola makan yang tepat.",
+                "Olahraga ringan untuk meningkatkan nafsu makan dan membentuk otot."
+            ],
+            "Berat Badan Normal": [
+                "Pertahankan pola makan sehat dan seimbang.",
+                "Tetap aktif secara fisik untuk menjaga kebugaran tubuh.",
+                "Pastikan tidur yang cukup, 7-9 jam per malam.",
+                "Kelola stres dengan meditasi atau aktivitas relaksasi lainnya.",
+                "Periksa kesehatan secara rutin untuk memastikan kondisi tubuh ideal."
+            ],
+            "Kelebihan Berat Badan": [
+                "Kurangi konsumsi makanan cepat saji dan makanan olahan.",
+                "Pilih makanan kaya serat seperti sayur dan buah.",
+                "Olahraga rutin 3-5 kali seminggu, misalnya berjalan, berenang, atau bersepeda.",
+                "Kontrol porsi makan dan hindari makan di malam hari.",
+                "Minum air putih yang cukup dan hindari minuman manis."
+            ],
+            "Obesitas": [
+                "Tetapkan target penurunan berat badan yang realistis, 5-10% dari berat awal.",
+                "Pilih makanan rendah kalori seperti sayuran, buah, dan protein tanpa lemak.",
+                "Lakukan olahraga sederhana seperti berjalan kaki atau naik tangga.",
+                "Ubah kebiasaan makan dengan jadwal yang teratur dan makan dengan penuh kesadaran.",
+                "Tidur yang cukup 7-9 jam untuk membantu metabolisme tubuh.",
+                "Kelola stres dengan meditasi atau yoga.",
+                "Konsultasi dengan ahli gizi atau dokter untuk panduan diet dan olahraga."
+            ]
+        };
+
+        // Fungsi untuk menampilkan solusi berdasarkan prediksi
+        function tampilkanSolusi(prediksi) {
+            const hasilPrediksiElement = document.getElementById("hasil-prediksi");
+            const solusiListElement = document.getElementById("solusi-list");
+
+            // Menetapkan prediksi ke halaman
+            hasilPrediksiElement.textContent = prediksi;
+
+            // Mengisi solusi sesuai prediksi
+            solusiListElement.innerHTML = ""; // Kosongkan terlebih dahulu
+            solusiData[prediksi].forEach((solusi) => {
+                const li = document.createElement("li");
+                li.textContent = solusi;
+                solusiListElement.appendChild(li);
+            });
+        }
+
+        // Contoh hasil prediksi (ubah sesuai kebutuhan)
+        const hasilPrediksi = "{{ prediction_text }}"; // Hasil dari server
+
+        tampilkanSolusi(hasilPrediksi);
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

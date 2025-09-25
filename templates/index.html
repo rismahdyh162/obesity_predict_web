@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediksi Penyakit Obesitas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+</head>
+<body>
+    <main class="page prediksi-page">
+        <section class="prediksi-form dark">
+            <nav class="navbar justify-content-center">
+                <span class="navbar-text mb-0 h3">Obesity Prediction</span>
+              </nav>
+        <div class="container">
+            <div class="block-heading">
+                <h1>Temukan Risiko Obesitas Anda</h1>
+                <h5>Kenali Risiko dan Cegah Obesitas dalam Tubuh Anda Sekarang Di Sini!</h5>
+            </div>
+            <form action="{{ url_for('predict') }}" method="POST" class="form col-sm-12" style="margin-top: 40px;">
+                        <div class="form-group">
+                            <label for="Age">Usia</label>
+                            <input type="number" id="Age" name="Age" placeholder="Masukan Usia Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Consumption_of_Fast_Food">Konsumsi Makanan Cepat Saji</label>
+                            <select id="Consumption_of_Fast_Food" name="Consumption_of_Fast_Food" required>
+                                <option value="1">Iya</option>
+                                <option value="2">Tidak</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="Frequency_of_Consuming_Vegetables">Konsumsi Sayuran</label>
+                            <select id="Frequency_of_Consuming_Vegetables" name="Frequency_of_Consuming_Vegetables" required>
+                                <option value="1">Jarang</option>
+                                <option value="2">Kadang-Kadang</option>
+                                <option value="3">Sering</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="Number_of_Main_Meals_Daily">Jumlah Makanan Utama Harian</label>
+                            <select id="Number_of_Main_Meals_Daily" name="Number_of_Main_Meals_Daily" required>
+                                <option value="1">1-2 x sehari</option>
+                                <option value="2">3 x sehari</option>
+                                <option value="3">3+ x sehari</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Physical_Excercise">Olahraga Fisik</label>
+                            <select id="Physical_Excercise" name="Physical_Excercise" required>
+                                <option value="1">Tidak Pernah</option>
+                                <option value="2">Kisaran 1-2 Hari</option>
+                                <option value="3">Kisaran 3-4 Hari</option>
+                                <option value="4">Kisaran 5-6 Hari</option>
+                                <option value="5">6 Hari Lebih</option>
+                            </select>
+                        </div> 
+            
+            <div class="center-wrapper">
+                <button type="submit" class="btn btn-primary">Prediksi</button>
+            </div>
+        </form>
+        </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
